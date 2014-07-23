@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Robotframework-excellibrary : " />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Robotframework-excellibrary</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/NaviNet/robotframework-excellibrary">View on GitHub</a>
+
+          <h1 id="project_title">Robotframework-excellibrary</h1>
+          <h2 id="project_tagline"></h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/NaviNet/robotframework-excellibrary/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/NaviNet/robotframework-excellibrary/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a name="robotframework-excellibrary-for-robot-framework" class="anchor" href="#robotframework-excellibrary-for-robot-framework"><span class="octicon octicon-link"></span></a>robotframework-excellibrary for Robot Framework</h1>
+
+<h2>
+<a name="introduction" class="anchor" href="#introduction"><span class="octicon octicon-link"></span></a>Introduction</h2>
+
+<p>Robotframework-excellibrary is a Robot Framework Library that provides keywords to allow opening, reading, writing and saving Excel files. The robotframework-excellibrary leverages two other python libraries <a href="https://pypi.python.org/pypi/xlutils/1.7.1">xlutils</a> and <a href="https://pypi.python.org/pypi/natsort/3.3.0">natsort</a>. Xlutils installs <a href="https://pypi.python.org/pypi/xlrd">xlrd</a> that reads data from an Excel file and <a href="https://pypi.python.org/pypi/xlwt">xlwt</a> that can write to an Excel file.</p>
+
+<ul>
+<li>Information about robotframework-excellibrary keywords can be found on the <a href="http://navinet.github.io/robotframework-excellibrary/ExcelLibrary-KeywordDocumentation.html">ExcelLibrary-Keyword Documentation</a> page.</li>
+<li>Information about working with Excel files in Python can be found on the <a href="http://www.python-excel.org/">Python Excel</a> page.</li>
+<li>Useful pdf for practical use with Excel files <a href="http://www.simplistix.co.uk/presentations/python-excel.pdf">here</a>.</li>
+</ul><h2>
+<a name="requirements" class="anchor" href="#requirements"><span class="octicon octicon-link"></span></a>Requirements</h2>
+
+<ul>
+<li>Python 2.7.4 (Newer versions not tested)</li>
+<li>Robot Framework 2.8.5 (Newer versions not tested)</li>
+<li>xlutils 1.7.1 (Newer versions not tested). Access the downloads <a href="https://pypi.python.org/pypi/xlutils/1.7.1">here</a>, or use pip install xlutils.</li>
+<li>natsort 3.3.0 (Newer versions not tested). Access the downloads <a href="https://pypi.python.org/pypi/natsort/3.3.0">here</a>, or use pip install natsort.</li>
+</ul><h2>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<h4>
+<a name="using-pip" class="anchor" href="#using-pip"><span class="octicon octicon-link"></span></a>Using pip</h4>
+
+<p>The recommended installation tool is <a href="http://pip-installer.org">pip</a>.</p>
+
+<p>Install pip.
+Enter the following:</p>
+
+<pre><code>pip install robotframework-excellibrary
+</code></pre>
+
+<p>Append <code>--upgrade</code> to update both the library and all 
+its dependencies to the latest version:</p>
+
+<pre><code>pip install --upgrade robotframework-excellibrary
+</code></pre>
+
+<p>To install a specific version enter:</p>
+
+<pre><code>pip install robotframework-excellibrary==(DesiredVersion)
+</code></pre>
+
+<h4>
+<a name="manual-installation" class="anchor" href="#manual-installation"><span class="octicon octicon-link"></span></a>Manual Installation</h4>
+
+<p>To install robotframework-excellibrary manually, install all dependency libraries before installing robotframework-excellibrary.</p>
+
+<p>1) Install <a href="http://code.google.com/p/robotframework/wiki/Installation">Robot Framework installed</a>.</p>
+
+<p>2) Download source distributions (<code>*.tar.gz</code> / <code>*.zip</code>) for the library and its
+   dependencies.</p>
+
+<p>robotframework-excellibrary and dependencies:</p>
+
+<ul>
+<li><a href="https://pypi.python.org/pypi/robotframework-excellibrary">https://pypi.python.org/pypi/robotframework-excellibrary</a></li>
+<li><a href="https://pypi.python.org/pypi/xlutils/1.7.1">https://pypi.python.org/pypi/xlutils/1.7.1</a></li>
+<li><a href="https://pypi.python.org/pypi/natsort/3.3.0">https://pypi.python.org/pypi/natsort/3.3.0</a></li>
+</ul><p>3) Extract each source distribution to a temporary location using 7zip (or your preferred zip program).</p>
+
+<p>4) Open command line and go to each directory that was created from extraction and install each project using:</p>
+
+<pre><code>   python setup.py install
+</code></pre>
+
+<h4>
+<a name="uninstall" class="anchor" href="#uninstall"><span class="octicon octicon-link"></span></a>Uninstall</h4>
+
+<p>To uninstall robotframework-excellibrary use the following pip command: </p>
+
+<pre><code>pip uninstall robotframework-excellibrary
+</code></pre>
+
+<p>However, if the package was installed manually it will need to be uninstalled manually:</p>
+
+<p>1) Navigate to <code>C:\Python27\ExcelRobotTest</code> and delete ExcelRobotTest.txt,  and ExcelLibrary-KeywordDocumentation.html</p>
+
+<p>2) Navigate to <code>C:\Python27\Lib\site-packages</code> and delete robotframework-excellibrary-0.0.2-py2.7.egg-info and the folder <code>robotframework-excellibrary</code></p>
+
+<h2>
+<a name="directory-layout" class="anchor" href="#directory-layout"><span class="octicon octicon-link"></span></a>Directory Layout</h2>
+
+<p><em>ExcelLibrary/ExcelLibrary.py</em> :
+    The Robot Python Library that makes use of the xlutils and natsort.</p>
+
+<p><em>Tests/acceptance/ExcelRobotTest.txt</em> :
+    Example test file to display what various keywords from robotframework-excellibrary accomplish</p>
+
+<p><em>doc/ExcelLibrary-KeywordDocumentation.html</em> :
+    Keyword documentation for the robotframework-excellibrary.</p>
+
+<h2>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>To write tests with Robot Framework and robotframework-excellibrary, 
+ExcelLibrary must be imported into your Robot test suite.
+See <a href="http://code.google.com/p/robotframework/wiki/UserGuide">Robot Framework User Guide</a> for more information.</p>
+
+<h2>
+<a name="running-the-demo" class="anchor" href="#running-the-demo"><span class="octicon octicon-link"></span></a>Running the Demo</h2>
+
+<p>The test file ExcelRobotTest.txt, is an easily executable test for Robot Framework using robotframework-excellibrary. 
+For in depth detail on how the keywords function, read the Keyword documentation found here : <a href="http://navinet.github.io/robotframework-excellibrary/ExcelRobotTest-KeywordDocumentation.html">Keyword Documentation</a></p>
+
+<p>To run the test navigate to the Tests directory in C:\Python folder. Open a command prompt within the <em>Tests/acceptance</em> folder and run:</p>
+
+<pre><code>pybot ExcelRobotTest.txt
+</code></pre>
+
+<h2>
+<a name="things-to-note-when-using-robotframework-excellibrary" class="anchor" href="#things-to-note-when-using-robotframework-excellibrary"><span class="octicon octicon-link"></span></a>Things to Note When Using robotframework-excellibrary</h2>
+
+<ul>
+<li>When using the keyword <em>Add New Sheet</em> the user cannot perform any functions before or after this keyword on the currently open workbook. The changes that other
+keywords make will not be saved when the keyword <em>Add New Sheet</em> is used. They must add a sheet then save the workbook before using any other keyword.
+If they want to use any other keywords on the workbbok they must open the workbook again to do so.</li>
+<li>We cannot use xlsx files as this has not been implemented in the xlrd library. Further information can be <a href="http://stackoverflow.com/questions/13892307/python-xlutils-formatting-info-true-not-yet-implemented">found here</a> and discussed <a href="https://groups.google.com/forum/#!msg/python-excel/w2AoQkX3TZc/1qjT1KzwoUsJ">here</a>. To get round this issue, the user can save the excel files with the xls extension, this is a Microsoft Excel 97-2003 Worksheet.</li>
+</ul><h2>
+<a name="getting-help" class="anchor" href="#getting-help"><span class="octicon octicon-link"></span></a>Getting Help</h2>
+
+<p>The <a href="http://groups.google.com/group/robotframework-users">user group for Robot Framework</a> is the best place to get help. Include in the post:</p>
+
+<ul>
+<li>Contact the <a href="https://groups.google.com/forum/#!forum/python-excel">Python-Excel google group</a>
+</li>
+<li>Full description of what you are trying to do and expected outcome</li>
+<li>Version number of robotframework-excellibrary and Robot Framework</li>
+<li>Traceback or other debug output containing error information</li>
+</ul>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Robotframework-excellibrary maintained by <a href="https://github.com/NaviNet">NaviNet</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
