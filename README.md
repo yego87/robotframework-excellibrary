@@ -99,7 +99,7 @@ Running the Demo
 ----------------
 
 The test file ExcelRobotTest.txt, is an easily executable test for Robot Framework using robotframework-excellibrary. 
-For in depth detail on how the keywords function, read the Keyword documentation found here : [Keyword Documentation](http://navinet.github.io/robotframework-excellibrary/ExcelRobotTest-KeywordDocumentation.html)
+For in depth detail on how the keywords function, read the Keyword documentation found here : [Keyword Documentation](http://navinet.github.io/robotframework-excellibrary/ExcelLibrary-KeywordDocumentation.html)
 
 To run the test navigate to the Tests directory in C:\Python folder. Open a command prompt within the *Tests/acceptance* folder and run:
 

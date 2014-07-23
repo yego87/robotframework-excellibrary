@@ -48,8 +48,8 @@ setup(name              = 'robotframework-excellibrary',
                               "Topic :: Software Development :: Quality Assurance"
                         ],
       install_requires  = [
-                                                      'robotframework >= 2.8.5'
-                                                      'xlutils >= 1.7.1'
+                                                      'robotframework >= 2.8.5',
+                                                      'xlutils >= 1.7.1',
                                                       'natsort >= 3.3.0'
                         ],
       packages          = ['ExcelLibrary'],
