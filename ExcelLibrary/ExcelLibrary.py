@@ -54,7 +54,7 @@ class ExcelLibrary:
         self.sheetNames = None
         self.fileName = None
         if os.name is "nt":
-            self.tmpDir = "Temp"
+            self.tmpDir = "Tmp"
         else:
             self.tmpDir = "tmp"
 
@@ -77,8 +77,25 @@ class ExcelLibrary:
             self.wb = open_workbook(os.path.join("/", self.tmpDir, filename), formatting_info=True, on_demand=True)
         else:
             self.wb = open_workbook(filename, formatting_info=True, on_demand=True)
-        self.fileName = filename
-        self.sheetNames = self.wb.sheet_names()
+            self.fileName = filename
+            self.sheetNames = self.wb.sheet_names()
+
+    def close_excel(self):
+        """
+        Closes the Excel file in the current session
+
+        Example:
+
+        | *Keywords*            |  *Parameters*                                      |
+        | Open Excel            |  C:\\Python27\\ExcelRobotTest\\ExcelRobotTest.xls  |
+        | Close Excel           |                                                    |
+
+        """
+        self.wb = None
+        self.tb = None
+        self.sheetNum = None
+        self.sheetNames = None
+        self.fileName = None
 
     def open_excel_current_directory(self, filename):
         """
@@ -367,11 +384,11 @@ class ExcelLibrary:
         """
         if self.wb:
             my_sheet_index = self.sheetNames.index(sheetname)
-            cell = self.wb.get_sheet(my_sheet_index).cell(int(row), int(column))
-            if cell.ctype is XL_CELL_NUMBER:
-                self.wb.sheets()
-                if not self.tb:
-                    self.tb = copy(self.wb)
+            # cell = self.wb.get_sheet(my_sheet_index).cell(int(row), int(column))
+            # if cell.ctype is XL_CELL_NUMBER:
+        if not self.tb:
+            self.wb.sheets()
+            self.tb = copy(self.wb)
         if self.tb:
             plain = easyxf('')
             self.tb.get_sheet(my_sheet_index).write(int(row), int(column), float(value), plain)
@@ -394,11 +411,12 @@ class ExcelLibrary:
         """
         if self.wb:
             my_sheet_index = self.sheetNames.index(sheetname)
-            cell = self.wb.get_sheet(my_sheet_index).cell(int(row), int(column))
-            if cell.ctype is XL_CELL_TEXT:
-                self.wb.sheets()
-                if not self.tb:
-                    self.tb = copy(self.wb)
+            # cell = self.wb.get_sheet(my_sheet_index).cell(int(row), int(column))
+            # if cell.ctype is XL_CELL_TEXT:
+
+        if not self.tb:
+            self.wb.sheets()
+            self.tb = copy(self.wb)
         if self.tb:
             plain = easyxf('')
             self.tb.get_sheet(my_sheet_index).write(int(row), int(column), value, plain)
@@ -421,17 +439,18 @@ class ExcelLibrary:
         """
         if self.wb:
             my_sheet_index = self.sheetNames.index(sheetname)
-            cell = self.wb.get_sheet(my_sheet_index).cell(int(row), int(column))
-            if cell.ctype is XL_CELL_DATE:
+            # cell = self.wb.get_sheet(my_sheet_index).cell(int(row), int(column))
+            # if cell.ctype is XL_CELL_DATE:
+            if not self.tb:
                 self.wb.sheets()
-                if not self.tb:
-                    self.tb = copy(self.wb)
+                self.tb = copy(self.wb)
         if self.tb:
             print(value)
-            dt = value.split('.')
-            dti = [int(dt[2]), int(dt[1]), int(dt[0])]
-            print(dt, dti)
-            ymd = datetime(*dti)
+            # dt = value.split('.')
+            # dti = [int(dt[2]), int(dt[1]), int(dt[0])]
+            # print(dt, dti)
+            ymd = datetime.strptime(value, '%d-%m-%Y')
+            print(ymd)
             plain = easyxf('', num_format_str='d.M.yyyy')
             self.tb.get_sheet(my_sheet_index).write(int(row), int(column), ymd, plain)
 
@@ -586,3 +605,4 @@ class ExcelLibrary:
         """
         self.tb = Workbook()
         self.tb.add_sheet(newsheetname)
+
