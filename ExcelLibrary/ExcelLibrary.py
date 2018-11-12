@@ -80,7 +80,7 @@ class ExcelLibrary:
             self.fileName = filename
             self.sheetNames = self.wb.sheet_names()
 
-    def close_file(self):
+    def close_excel_file(self):
         """
         Closes the Excel file in the current session
 
